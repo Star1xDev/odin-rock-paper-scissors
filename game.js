@@ -54,42 +54,5 @@ function playRound(playerSelection, computerSelection){
   }
 }
 
-// function 'game' to play five rounds
-function game(){
 
-  for (let i = 1; i <= 5; i++) {
-    let playerChoice = prompt("Enter Your Choice : ").trim();
-    let computerChoice = getComputerChoice();
-    console.groupCollapsed(playRound(playerChoice,computerChoice));
-    console.log(`player choice is : ${playerChoice}`);
-    console.log(`computer choice is : ${computerChoice}`);
-    console.groupEnd(playRound(playerChoice,computerChoice));
-  }
-
-  // check if player wants to play again
-    let playAgain = prompt("play again (Yes/No): ");
-    if(playAgain.toLowerCase() === "no" || playAgain.toLowerCase() === "n"){
-      return;
-    }else if(playAgain.toLowerCase() === "yes" || playAgain.toLowerCase() === "y"){
-      console.info("**  starting again  **")
-      game();
-    }else {
-      console.error("invalid input!!...shutting down you computer in 10 ");
-      let num = 9;
-      let interval = setInterval( () => {
-        console.error(num);
-        num--;
-        if (num < 0) {
-          console.warn("I'm just kidding! lol");
-          clearInterval(interval);
-        }
-
-      }, 1000);
-
-    }
-
-}
-
-// start game
-game();
 
